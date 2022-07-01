@@ -1,0 +1,129 @@
+root@TIGER03312:~# ls
+Git_projects                                            miniconda3       project.pub
+Miniconda3-py39_4.12.0-Linux-x86_64.sh                  my_git_session   shell-lesson-data
+Miniconda3-py39_4.12.0-Linux-x86_64.sh:Zone.Identifier  my_project       shell-lesson-data.zip:Zone.Identifier
+conda                                                   my_unix_session  unix_session
+env.yml                                                 project
+root@TIGER03312:~# cd Git_projects/
+root@TIGER03312:~/Git_projects# ls
+mle-training
+root@TIGER03312:~/Git_projects# git clone https://github.com/ArunKumar281/Assignment1.git
+Cloning into 'Assignment1'...
+Username for 'https://github.com': Arunkumar281
+Password for 'https://Arunkumar281@github.com':
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/ArunKumar281/Assignment1.git/'
+root@TIGER03312:~/Git_projects# git clone git@github.com:ArunKumar281/Assignment1.git
+Cloning into 'Assignment1'...
+Warning: Permanently added the ECDSA host key for IP address '13.234.176.102' to the list of known hosts.
+Enter passphrase for key '/root/.ssh/id_ed25519':
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+root@TIGER03312:~/Git_projects# ls
+Assignment1  mle-training
+root@TIGER03312:~/Git_projects# cd Assignment1
+root@TIGER03312:~/Git_projects/Assignment1# ls
+README.md
+root@TIGER03312:~/Git_projects/Assignment1# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+root@TIGER03312:~/Git_projects/Assignment1# ls
+README.md  conda_session  git_session  unix_session
+root@TIGER03312:~/Git_projects/Assignment1# git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+root@TIGER03312:~/Git_projects/Assignment1# git add .
+root@TIGER03312:~/Git_projects/Assignment1# git commit
+Aborting commit due to empty commit message.
+root@TIGER03312:~/Git_projects/Assignment1# git push
+Enter passphrase for key '/root/.ssh/id_ed25519':
+Everything up-to-date
+root@TIGER03312:~/Git_projects/Assignment1# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   conda_session
+        new file:   git_session
+        new file:   unix_session
+
+root@TIGER03312:~/Git_projects/Assignment1# git commit -m
+error: switch `m' requires a value
+root@TIGER03312:~/Git_projects/Assignment1# git commit
+hint: Waiting for your editor to close the file...
+
+Use "fg" to return to nano.
+
+[1]+  Stopped                 git commit
+root@TIGER03312:~/Git_projects/Assignment1# git commit -m "Initial commit"
+[main a9e513f] Initial commit
+ 3 files changed, 1647 insertions(+)
+ create mode 100644 conda_session
+ create mode 100644 git_session
+ create mode 100644 unix_session
+root@TIGER03312:~/Git_projects/Assignment1# git remote add origin https://github.com/ArunKumar281/Assignment1.git
+fatal: remote origin already exists.
+root@TIGER03312:~/Git_projects/Assignment1# git remote add https://github.com/ArunKumar281/Assignment1.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+root@TIGER03312:~/Git_projects/Assignment1# git remote push
+error: Unknown subcommand: push
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+root@TIGER03312:~/Git_projects/Assignment1# git push origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'git@github.com:ArunKumar281/Assignment1.git'
+root@TIGER03312:~/Git_projects/Assignment1# git remote
+origin
+root@TIGER03312:~/Git_projects/Assignment1# git remote show origin
+Enter passphrase for key '/root/.ssh/id_ed25519':
+* remote origin
+  Fetch URL: git@github.com:ArunKumar281/Assignment1.git
+  Push  URL: git@github.com:ArunKumar281/Assignment1.git
+  HEAD branch: main
+  Remote branch:
+    main tracked
+  Local branch configured for 'git pull':
+    main merges with remote main
+  Local ref configured for 'git push':
+    main pushes to main (fast-forwardable)
+root@TIGER03312:~/Git_projects/Assignment1# git push git@github.com:ArunKumar281/Assignment1.git
+Enter passphrase for key '/root/.ssh/id_ed25519':
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 21.62 KiB | 5.40 MiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To github.com:ArunKumar281/Assignment1.git
+   7329cff..a9e513f  main -> main
+root@TIGER03312:~/Git_projects/Assignment1#
